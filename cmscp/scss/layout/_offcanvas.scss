@@ -1,0 +1,54 @@
+// ===========================================
+// offcanvas
+// ===========================================
+#offcanvas {
+
+}
+
+.uk-offcanvas-bar {
+	background: #fff;
+	padding: 0;
+}
+
+.uk-nav {
+	.uk-nav-header {
+		background: map-get($colors, main);
+		padding: .5em 1em;
+		border-bottom: 0;
+	}
+	> li {
+		border-bottom: 1px solid #DCDCDC;
+		a {
+			padding: .5em 1em;
+			color: map-get($colors, text) !important;
+		}
+	}
+	.uk-parent {
+		a {
+			&::after {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E") !important;
+				height: 2em !important; // ling-heightに合わせる
+			}
+		}
+		&.uk-open {
+			a {
+				&::after {
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E") !important;
+				}
+			}
+		}
+	}
+	.uk-nav-sub {
+		background: #F5F5F5;
+		padding: 0;
+		li {
+			a {
+				padding: .5em 1em;
+				padding-left: 2em;
+			}
+			+ li {
+				border-top: 1px solid #fff;
+			}
+		}
+	}
+}

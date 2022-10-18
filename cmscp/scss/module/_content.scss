@@ -1,0 +1,22 @@
+
+
+
+/* セクション
+--------------------------------- */
+.com-container-01 {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	@include mq-up() {
+		padding-top: 40px;
+		padding-bottom: 20px;
+	}
+}
+
+.com-container-02 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@include mq-up() {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}

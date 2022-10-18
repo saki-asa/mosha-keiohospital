@@ -1,0 +1,626 @@
+*[class*=uk-container] {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#keyvisual {
+	.keyvisual-wrapper {
+		a {
+			display: block;
+			height: 100%;
+			text-align: center;
+		}
+	}
+}
+
+.news-wrapper {
+	@include mq-up() {
+		background: #e8e8e8;
+	}
+	.news-container {
+		@include mq-up() {
+				width: 960px;
+				display: flex;
+				margin: 0 auto;
+				background: #e8e8e8;
+		}
+		h2 {
+			background-color: #e17d7d;
+			color: #fff;
+			@include font(12);
+			text-align: center;
+			margin: 0;
+			padding: 10px;
+			@include mq-up() {
+				display: flex;
+				width: 166px;
+				align-items: center;
+				justify-content: center;
+				@include font(14);
+			}
+			&:before {
+				background-image: url('/img/sprites-se8687b0ed3.png');
+
+			}
+		}
+		.news-list {
+			padding: 10px 30px;
+			time {
+				@include font(14);
+				@include mq-up(){
+						padding-right: 10px;
+				}
+				@include mq-down(){
+					display: block;
+				}
+			}
+			li {
+				&:not(:last-child) {
+					margin-bottom: .8em;
+				}
+				a {
+					text-decoration: underline;
+					color: #245dc1;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.large-btn-wrapper {
+	ul {
+		display: flex;
+		@include mq-down(){
+			flex-wrap: wrap;
+			margin-left: -20px;
+			padding-top: 10px;
+			padding-bottom: 20px;
+		}
+		li {
+			box-sizing: border-box;
+			&:last-child > a {
+					border-right: 1px solid #ccc;
+			}
+			@include mq-up(){
+				width: 25%;
+			}
+			@include mq-down(){
+				width: 50%;
+				display: flex;
+				padding-left: 20px;
+				padding-bottom: 20px;
+			}
+			a {
+				display: block;
+				padding: 10px;
+				text-align: center;
+				border-left:1px solid #ccc;
+				@include mq-down(){
+					border-right: 1px solid #ccc;
+					border-top: 1px solid #ccc;
+					border-bottom: 1px solid #ccc;
+					width: 100%;
+				}
+				@include mq-up(){
+					@include font(21);
+				}
+				span {
+					display: block;
+					white-space: nowrap;
+				}
+				img {
+					min-height: 80px;
+				}
+			}
+		}
+	}
+}
+
+.small-btn-wrapper {
+	@include mq-up(){
+		background-color: #f7f8f8;
+	}
+	.uk-container {
+			@include mq-up(){
+				display: flex;
+			}
+			li {
+				background-color: #f7f8f8;
+				@include mq-up(){
+					width: calc(100% / 3);
+				}
+				&:not(:first-child)>a {
+					border-left:1px solid #ccc;
+				}
+				@include mq-down(){
+					&:last-child {
+						border-bottom: 1px solid #ccc;
+					}
+				}
+				a {
+					display:  block;
+					position: relative;
+					box-sizing: border-box;
+					width: 100%;
+					padding: 20px;
+					@include font(21);
+					@include mq-down(){
+						border-left: 1px solid #ccc;
+						border-right: 1px solid #ccc;
+						border-top: 1px solid #ccc;
+					}
+					@include mq-up(){
+						padding-left: 70px;
+						&:before {
+							content: "";
+							display: inline-block;
+							background-image: url(http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png);
+							background-repeat: no-repeat;
+							height: 48px;
+							width: 48px;
+							position: absolute;
+							top: 20%;
+							left: 10px;
+						}
+						&.department::before {
+							background-position: 0 -565px;
+						}
+						&.search::before {
+							background-position: 0 -801px;
+						}
+						&.map::before {
+								background-position: 0 -715px;
+						}
+					}
+				}
+			}
+	}
+}
+
+.tab-wrapper {
+	padding-top: 20px;
+	@include mq-up {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		background-color: map-get($colors, main);
+		padding-top: 50px;
+	}
+	@include mq-down {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+.tab-label {
+	cursor: pointer;
+	display: block;
+	box-sizing: border-box;
+	padding: 15px 0;
+	@include font(18);
+	@include mq-up() {
+		order: -1;
+		width: 33%;
+		max-width: calc( 960px / 3);
+		@include font(16);
+		text-align: center;
+		// &:not(:last-of-type) {
+		// 	border-right: 1px solid #939393;
+		// }
+	}
+	@include mq-down() {
+		padding-left: 30px;
+		padding-right: 30px;
+		box-shadow: 1px 2px 4px rgb(0 0 0 / 30%);
+		margin-bottom: 10px;
+	}
+}
+
+.tab-content {
+	width: 100%;
+	background-color: map-get($colors, white);
+	display: none;
+	.uk-container {
+		@include mq-up() {
+			padding-top: 40px;
+			padding-bottom: 20px;
+		}
+		@include mq-down() {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	li {
+
+		&:not(:first-child){
+			margin: 1.5em 0;
+		}
+		@include mq-up() {
+			display: flex;
+			align-items: center;
+		}
+		time {
+			@include font(14);
+			white-space: nowrap;
+			align-items: center;
+		}
+		span {
+			color: #fff;
+			@include font(11);
+			padding: .1em .7em;
+			height: 19px;
+			margin-left: 1em;
+			white-space: nowrap;
+			display: inline-block;
+			@include mq-up() {
+				margin-right: 2em;
+			}
+			&.news {
+				background-color: #e17d7d;
+			}
+			&.event {
+				background-color: #7683d2;
+			}
+		}
+		a {
+			display: block;
+			color: #245dc1;
+			text-decoration: underline;
+		}
+	}
+	.link {
+		text-align: right;
+		a {
+			color: #245dc1;
+			text-decoration: underline;
+			position: relative;
+			padding-left: .5em;
+			&::before {
+				content: "";
+				background-image: url(http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png);
+				height: 17px;
+				width: 18px;
+				background-position: 0 -34px;
+				position: absolute;
+				left: -18px;
+				bottom: 4px;
+			}
+		}
+	}
+}
+
+
+/* ラジオボタン非表示 */
+#news-tab {
+	.tab-switch {
+		display: none;
+		&:checked+.tab-label {
+			background-color: map-get($colors, white);
+			@include mq-up() {
+					border-top: 3px solid #031863;
+			}
+		}
+		&:checked+.tab-label+.tab-content {
+			display: block;
+			transition: .5s;
+			margin-bottom: -1px;
+		}
+	}
+}
+
+
+
+.block-btn-wrapper {
+	background-color: map-get($colors, main);
+	@include mq-down() {
+		margin-top: 30px;
+	}
+	.uk-container {
+		img {
+			border-top: 3px solid #031863;
+			width: 100%;
+		}
+		span {
+			display: block;
+			background-color: map-get($colors, white);
+			line-height: 1;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			padding-left: 1em;
+			padding-right: .1em;
+			position: relative;
+			@include font(10);
+			@include mq-up('s') {
+				text-align: center;
+				padding-left: 30px;
+				@include font(14);
+			}
+			&:before {
+				@include mq-up('s') {
+					content: "";
+					background-image: url(http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png);
+					display: block;
+					height: 17px;
+					width: 18px;
+					background-position: 0 -34px;
+					position: absolute;
+					left: 3%;
+					top: 30%;
+					margin-right: .2em;
+				}
+			}
+		}
+	}
+}
+
+.info-wrapper {
+	@include mq-up('s') {
+		background-color:  #f7f8f8;
+		border: 1px solid #dbdbdb;
+		padding: 20px 20px 15px;
+		width: 460px;
+	}
+}
+
+.info-list {
+	border-collapse:collapse;
+	@include mq-down('s')  {
+		border: 1px solid #dbdbdb;
+		padding: 10px;
+	}
+	div {
+		@include mq-up('s') {
+			display: flex;
+		}
+		&:not(:first-child)  {
+			border-top: 1px solid #cccccc;
+			padding-top: 15px;
+		}
+		&:not(:last-child)  {
+			padding-bottom: 15px;
+		}
+
+		dt {
+			display: flex;
+			@include mq-up('s') {
+				width: 160px;
+				box-sizing: border-box;
+			}
+			@include mq-down('s') {
+				@include font(14);
+			}
+			&:before {
+				content: "";
+				display: block;
+				height: 20px;
+				width: 20px;
+				margin-top: 3px;
+				margin-right: .3em;
+				@include mq-up('s') {
+					height: 38px;
+					width: 41px;
+					margin-right: 10px;
+					margin-top: -5px;
+				}
+			}
+			&.phone::before {
+				background-image: url( 'http://www.hosp.keio.ac.jp/common/images/sprites/mark_telephone.png' );
+				background-repeat: no-repeat;
+				@include mq-down('s') {
+					background-size: 20px auto;
+				}
+			}
+			&.hour::before {
+				background-image: url( 'http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png');
+				background-position: 0 -135px;
+				@include mq-up('s') {
+					background-position: 0 -269px;
+				}
+				@include mq-down('s') {
+					background-size: 57px auto;
+				}
+			}
+			&.holiday::before {
+				background-image: url( 'http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png');
+				background-position: 0 -97px;
+				@include mq-up('s') {
+					background-position: 0 -193px;
+				}
+				@include mq-down('s') {
+					background-size: 57px auto;
+				}
+			}
+		}
+		dd {
+			@include mq-down('s') {
+				@include font(12);
+				line-height: 1.5;
+			}
+		}
+	}
+}
+
+.btn-reservation {
+	text-align: center;
+	margin-top: 10px;
+	.uk-grid-margin {
+		margin-top: 10px;
+	}
+	a {
+		display: block;
+		text-align: center;
+		color: #fff;
+		background-color: #031763;
+		padding: 15px 20px;
+		position: relative;
+		&:before {
+			content: "";
+			background-image: url( 'http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png' );
+			background-repeat: no-repeat;
+			height: 17px;
+			width: 18px;
+			display: inline-block;
+			background-position: 0 -51px;
+			position: absolute;
+			left: 20px;
+			top: 35%;
+		}
+	}
+}
+
+.map-container {
+	@include mq-up() {
+		margin-left: 10px;
+	}
+	@include mq-up('s') {
+		background-image: url('../img/top_map.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 460px;
+		height: 257px;
+	}
+	&.uk-grid-margin {
+		margin-top: 10px;
+	}
+	.uk-grid {
+		height: 100%;
+	}
+	.btn-access {
+		a {
+			color: #fff;
+			display: block;
+			background-color: #383838;
+			font-weight: bold;
+			text-align: center;
+			position: relative;
+			@include mq-up ('s') {
+				line-height: 1.2;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				opacity: .9;
+				margin-left: 50px;
+			}
+			@include mq-down('s') {
+				padding: 15px 20px;
+			}
+			&:before {
+				content: "";
+				background-image: url( 'http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png' );
+				background-repeat: no-repeat;
+				background-position: 0 -51px;
+				height: 17px;
+				width: 18px;
+				display: block;
+				position: absolute;
+				left: 20px;
+				top: 35%;
+				@include mq-up ('s') {
+					display: block;
+					margin-bottom: 10px;
+					top: 10px;
+					left: 40%;
+					vertical-align: center;
+				}
+			}
+		}
+		span {
+			display: block;
+			position: relative;
+			@include mq-up('s') {
+				top: 40px;
+			}
+		}
+	}
+	.btn-facility {
+		@include mq-up('s') {
+			margin-left: -30px;
+		}
+		&.uk-grid-margin {
+			margin-top: 10px;
+		}
+		li + li {
+			margin-top: 10px;
+			@include mq-up('s') {
+				margin-top: 20px;
+			}
+		}
+		a {
+			background-color: #ff9f1a;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			color: #fff;
+			font-weight: bold;
+			display: block;
+			text-align: center;
+			position: relative;
+			@include mq-up('s') {
+				width: 185px;
+				line-height: 1.3;
+			}
+			&:before {
+				content: "";
+				background-image: url( 'http://www.hosp.keio.ac.jp/common/images/sprites-se8687b0ed3.png' );
+				background-repeat: no-repeat;
+				height: 17px;
+				width: 18px;
+				display: inline-block;
+				background-position: 0 -51px;
+				position: absolute;
+				left: 20px;
+				top: 35%;
+			}
+		}
+	}
+}
+
+
+.bnr-wrapper {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	border-top: 25px solid #f0ede5;
+	border-bottom: 25px solid #f0ede5;
+	.bnr-container {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #f7f8f8;
+	}
+	.uk-container {
+		@include mq-up('m') {
+			padding-left: 45px;
+			padding-right: 45px;
+		}
+	}
+	.uk-slider-items {
+		a {
+			display: block;
+			text-align: center;
+		}
+	}
+	.arrow {
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 20px;
+		height: 20px;
+		@include mq-up('m') {
+			width: 40px;
+			height: 40px;
+		}
+		&.uk-position-center-left {
+			background-image: url(../img/btn_prev_01.png);
+		}
+		&.uk-position-center-right {
+			background-image: url(../img/btn_next_01.png);
+		}
+	}
+	.uk-slidenav {
+		svg {
+			display: none;
+		}
+	}
+}
